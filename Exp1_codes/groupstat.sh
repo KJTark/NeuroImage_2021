@@ -14,7 +14,6 @@ do
    @auto_tlrc -apar T1_al2Surf_mni+tlrc -input stats.${subID}Avg_MSTaskLoc2+orig -suffix _mni -dxyz 3
    @auto_tlrc -apar T1_al2Surf_mni+tlrc -input stats.${subID}Avg_fullCross_MSTaskLoc+orig -suffix _mni -dxyz 3
  
-   echo ${subID}'Avg_fullCross is done!' 
 done
 
 ## t-test 
