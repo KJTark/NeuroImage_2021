@@ -2,9 +2,9 @@
 subs="01 03 05 07 09 11 13 15 17 19 21 23"
 for subID in $subs
 do
-   cd ${subID}fullCross/Img_data      
-   mkdir -p MNI_transform
-   cd MNI_transform 
+   cd ${subID}/Img_data/MNI_transform
+   
+   ## copy
    cp ../T1_al2Surf+orig.* ./
    cp ../${subID}Avg_fullCross_MSTaskLoc.results/stats.${subID}Avg_MSTaskLoc2+orig.* ./
    cp ../${subID}Avg_fullCross_MSTaskLoc.results/stats.${subID}Avg_fullCross_MSTaskLoc+orig.* ./
@@ -31,8 +31,7 @@ done
       'stats.21Avg_MSTaskLoc2_mni+tlrc.HEAD[4]' 'stats.23Avg_MSTaskLoc2_mni+tlrc.HEAD[4]' \
 -prefix TaskOn_Off -paired
 
-## average all subs' hi-res 
-subs="01 03 05 07 09 11 13 15 17 19 21 23"
+## average all subs' hi-res.
 cd group_stats
 
 3dcalc -a 01_T1_mni+tlrc -prefix AvgfullCross_T1_mni -b 03_T1_mni+tlrc -c 05_T1_mni+tlrc -d 07_T1_mni+tlrc -e 09_T1_mni+tlrc \
