@@ -131,14 +131,14 @@ if __name__ == '__main__':
 
 	for subNo in subs:
 
-		data_dir = subNo + 'Avg_HV_LUM/Img_data_reanal_v2/encoding_AvgHvLum/'
-		mask_dir = subNo + 'Avg_HV_LUM/Img_data_reanal_v2/ROI_masks/'
+		data_dir = subNo + '/Img_data_reanal_v2/encoding/'
+		mask_dir = subNo + '/Img_data_reanal_v2/ROI_masks/'
 		os.chdir(data_dir) 
 		print 'Sub No: %s' % subNo
 
-		attr_file = subNo + 'Avg_HV_LUM/BH_data/' + subNo + '_AvgHvLum_Att_correct_SD7.txt'
+		attr_file = subNo + '/BH_data/' + subNo + '_AvgHvLum_Att_SD7.txt'
 
-		ROIs = ['V1_thr','V2_thr','V3_thr','IPS2_thr','SPL_thr', 'FEF_thr']
+		ROIs = ['V1_thr','V2_thr','V3_thr','IPS_thr','SPL_thr', 'FEF_thr']
 
 		nROIs = 1
 		for i in ROIs:
@@ -309,9 +309,9 @@ if __name__ == '__main__':
 			channel_responses_each_shift = result_each_shift
 
 
-			savetxt(subjname + '_result_all_8ori_unshift.txt', 
+			savetxt(subjname + '_result_all_unshift.txt', 
 				channel_responses_each_unshift, '%f', '\t')
-			savetxt(subjname + '_result_all_8ori_shift.txt', 
+			savetxt(subjname + '_result_all_shift.txt', 
 				channel_responses_each_shift, '%f', '\t')
 
 			## HV ============================================
@@ -429,9 +429,9 @@ if __name__ == '__main__':
 			channel_responses_each_shift = result_each_shift
 
 
-			savetxt(subjname + '_result_all_8ori_unshift.txt', 
+			savetxt(subjname + '_result_all_unshift.txt', 
 				channel_responses_each_unshift, '%f', '\t')
-			savetxt(subjname + '_result_all_8ori_shift.txt', 
+			savetxt(subjname + '_result_all_shift.txt', 
 				channel_responses_each_shift, '%f', '\t')
 
 
@@ -559,9 +559,9 @@ if __name__ == '__main__':
 			channel_responses_each_unshift = result_each_unshift
 			channel_responses_each_shift = result_each_shift
 
-			savetxt(subjname + '_result_all_8ori_unshift.txt', 
+			savetxt(subjname + '_result_all_unshift.txt', 
 				channel_responses_each_unshift, '%f', '\t')
-			savetxt(subjname + '_result_all_8ori_shift.txt', 
+			savetxt(subjname + '_result_all_shift.txt', 
 				channel_responses_each_shift, '%f', '\t')
 
 			nROIs = nROIs + 1
